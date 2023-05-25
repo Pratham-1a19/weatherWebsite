@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: #222;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 550px;
+  /* background: linear-gradient(#ffffff, #6284FF, #FF0000); */
+  background: linear-gradient(#08AEEA, #2AF598);
+  color: #fff;
+  margin: 50px auto 0;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  padding: 75px 20px;
+  height: 2500px;
+}
+
+.upper-content {
+  text-align: center;
+}
+
+hr {
+  border: 3px solid rgb(108, 210, 108);
+  border-radius: 10px;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.search button img {
+  width: 16px;
+}
+
+.weather icon {
+  width: 10px;
+  margin-top: 30px;
+}
+
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 50px;
+}
+
+.cols {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.cols img {
+  width: 60px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#backToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9f9f9f;
+  color: #222121;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#backToTopButton i {
+  font-size: 20px;
+}
+
+#backToTopButton:hover {
+  background-color: #555555;
+}
+
+.upper {
+  /* margin-right: 10px; */
+  padding-left: 22px;
+}
+
+.lower1,.lower2,.lower3,.lower4,.lower5,.lower6,.lower7,.lower8,.lower9,.lower10,.lower11,.lower12 {
+  padding-left: 26px;
+}
+
+.week {
+  display: inline-block;
+}
+
+.image {
+  width: 55px;
+  height: 55px;
+  margin-left: 10px;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+.text {
+  display: ;
+  margin-left: 16px;
+}
+
+.precipitation {
+  padding-left: 59px;
+}
+
+.rainDrop {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.dash {
+  margin-left: px;
+}
+
+.time {
+  padding-left: 74px;
+}
+
+.windContent {
+  width: 100%;
+  /* align-: center; */
+}
+
+#myPlot {
+  /* margin-left: 10px; */
+  border-width: 10px;
+  border-color: #222;
+  /* align-content: center; */
+  margin-left: 55px
+}
+
+.sr-ss {
+  display: inline;
+}

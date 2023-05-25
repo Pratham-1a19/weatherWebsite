@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" id="cityInput" placeholder="Search By Location" spellcheck="false">
+            <button onclick="searchWeather()"><img src="images/search.png" alt=""></button>
+        </div>
+        <div class="weather">
+            <div class="upper-content">
+                <img id="weatherIcon" src="images/clear.png" class="weather-icon">
+                <h1 id="temperature" class="temp">40°C</h1>
+                <h2 id="cityName" class="city">New Delhi</h2>
+            </div>
+
+            <br><br>
+            <hr><br>
+            <div class="title">Hourly Forecast</div><br><br>
+            <div class="scrollmenu">
+                <div class="week">
+                    <h4 class="upper">12PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower1">35°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">1PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower2">41°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">2PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower3">43°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">3PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower4">45°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">4PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower5">46°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">5PM</h4>
+                    <img src="images/clear.png" class="image">
+                    <h4 class="lower6">42°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">6PM</h4>
+                    <img src="images/clouds.png" class="image">
+                    <h4 class="lower7">35°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">7PM</h4>
+                    <img src="images/clouds.png" class="image">
+                    <h4 class="lower8">31°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">8PM</h4>
+                    <img src="images/night.png" class="image">
+                    <h4 class="lower9">29°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">9PM</h4>
+                    <img src="images/night.png" class="image">
+                    <h4 class="lower10">28°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">10PM</h4>
+                    <img src="images/night.png" class="image">
+                    <h4 class="lower11">27°C</h4>
+                </div>
+                <div class="week">
+                    <h4 class="upper">11PM</h4>
+                    <img src="images/night.png" class="image">
+                    <h4 class="lower12">25°C</h4>
+                </div>
+            </div>
+            <br>
+            <hr><br>
+
+            <div class="title">Current Details</div>
+            <div class="details">
+                <div class="cols">
+                    <img src="images/humidity.png" alt="">
+                    <div>
+                        <p id="humidity" class="humidity">19%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <img src="images/wind.png" alt="">
+                    <div>
+                        <p id="windSpeed" class="wind">14 km/hr</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="cols">
+                    <img src="images/dewPoint.png" alt="">
+                    <div>
+                        <p id="dewPoint" class="dew">21°C</p>
+                        <p>Dew Point</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <img src="images/pressure.png" alt="">
+                    <div>
+                        <p id="pressure" class="pre">1009 mBar</p>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="cols">
+                    <img src="images/moonPhase.png" alt="">
+                    <div>
+                        <p id="moonPhase" class="moon">Waxing Crescent</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <img src="images/uvIndex.png" alt="">
+                    <div>
+                        <p id="uvIndex" class="uV">0 of 10</p>
+                        <p>UV Index</p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr><br>
+
+            <div class="title">Precipitation</div><br>
+            <div class="scrollmenu">
+                <div>
+                    <h4>
+                        Chance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </h4>
+                </div>
+                <div class="precipitation">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                    <img src="images/drop.png" class="rainDrop">
+                </div>
+                <div>
+                    <h4 class="dash">
+                        Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        -
+                    </h4>
+                </div>
+                <div class="time">
+                    <h4>
+                        12PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        1PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        2PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        3PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        4PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        5PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        6PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        7PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        8PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        9PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        10PM
+                    </h4>
+                </div><br>
+                <h3>Today's daily volume - <b>0MM</b></h3><br>
+            </div>
+
+            <hr><br>
+            <div class="title">Wind - <span class="windSpeed">14km/hr</span></div><br>
+            <div class="windContent">
+                <div id="myPlot" class="sub" style="width:100%;max-width:400px;height:400px"></div>
+            </div>
+
+            <br>
+            <hr><br>
+            <div class="title">Sunrise & Sunset</div>
+            <div class="details">
+                <div class="sr-ss">
+                    <div class="cols">
+                        <img src="images/sunrise.png">
+                        <div>
+                            <p id="sunrise">5:56 AM</p>
+                            <p>Sunnrise</p>
+                        </div>
+                    </div><br><br>
+                    <div class="cols">
+                        <img src="images/sunset.png">
+                        <div>
+                            <p id="sunset">7:18 PM</p>
+                            <p>Sunset</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sr-ss">
+                    <h3>Length of day: <span class="lengthOfDay">13hr 21m</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <button id="backToTopButton" onclick="scrollToTop()">
+            <i class="fa-sharp fa-solid fa-angle-up fa-bounce" style="color: #000000;"></i>
+        </button>
+
+        <script src="app.js"></script>
+</body>
+
+</html>
